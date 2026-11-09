@@ -24,11 +24,12 @@
             --popup-teal: #0d4a5b; /* Teal color from the popup */
         }
 
-        body {
+        /* Lock background scrolling */
+        html, body {
             background-color: #ffffff;
             color: var(--text-dark);
-            /* Changed to overflow: hidden to lock background scrolling */
-            overflow: hidden; 
+            overflow: hidden; /* Changed from overflow-x: hidden to lock all scrolling */
+            height: 100%;
         }
 
         /* Top Section Wrapper with Angled Bottom */
