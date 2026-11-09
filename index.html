@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Bionutritionals</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Color Variables */
+        :root {
+            --bg-color: #153656; /* Dark Navy Blue */
+            --text-white: #ffffff;
+            --text-blue: #62a8d8; /* Light Blue accent */
+            --btn-red: #c83224;
+            --btn-red-hover: #a82418;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            overflow-x: hidden;
+        }
+
+        /* Header Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-icon {
+            color: var(--text-blue);
+            font-size: 2rem;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav ul li a {
+            color: var(--text-white);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--text-blue);
+        }
+
+        .btn {
+            background-color: var(--btn-red);
+            color: var(--text-white);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: var(--btn-red-hover);
+        }
+
+        /* Main Hero Section */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        .hero-text h1 .highlight {
+            color: var(--text-blue);
+        }
+
+        .hero-text p {
+            font-size: 1.6rem;
+            line-height: 1.4;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .main-btn {
+            font-size: 1.2rem;
+            padding: 15px 40px;
+        }
+
+        /* Image Section */
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Placeholder for the bottle image */
+        .bottle-image {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            object-fit: contain;
+            /* Adding a drop shadow to make it pop like the screenshot */
+            filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.4));
+        }
+
+        /* Responsive Design for smaller screens */
+        @media (max-width: 992px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 30px;
+            }
+
+            .hero-text {
+                max-width: 100%;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .hero-text p {
+                font-size: 1.3rem;
+            }
+            
+            nav ul {
+                display: none; /* Hide nav links on mobile for simplicity */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            .hero-text p {
+                font-size: 1.1rem;
+            }
+            .logo {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <span class="logo-icon">🧬</span> 
+            <div>advanced<br>bionutritionals<sup style="font-size:0.6rem;">®</sup></div>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Ingredients</a></li>
+                <li><a href="#">Guarantee</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </nav>
+
+        <a href="#" class="btn">Order Now</a>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="hero-section">
+        
+        <!-- Left Side: Text -->
+        <div class="hero-text">
+            <h1>“This is Like<br>Rocket Fuel for<br>Your<br><span class="highlight">Mitochondria!”</span></h1>
+            <p>Studies show it can boost<br>energy, improve mobility, and<br>help you feel younger than<br>you’ve felt in years!</p>
+            <a href="#" class="btn main-btn">Order Now</a>
+        </div>
+
+        <!-- Right Side: Image -->
+        <div class="hero-image">
+            <!-- IMPORTANT: Replace the src link below with the actual image of your bottle -->
+            <img src="https://via.placeholder.com/400x500/transparent/ffffff?text=Product+Bottle+Image+Here" alt="Advanced Mitochondrial Formula Bottle" class="bottle-image">
+        </div>
+
+    </main>
+
+</body>
+</html>
