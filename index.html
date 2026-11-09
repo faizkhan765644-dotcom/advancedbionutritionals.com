@@ -21,10 +21,11 @@
             --btn-red: #c83224;
             --btn-red-hover: #a82418;
             --text-dark: #333333;
+            --popup-teal: #0d4a5b; /* Teal color from the popup */
         }
 
         body {
-            background-color: #ffffff; /* Changed to white for the new section */
+            background-color: #ffffff;
             color: var(--text-dark);
             overflow-x: hidden;
         }
@@ -182,6 +183,86 @@
             font-weight: 700;
         }
 
+        /* --- COOKIE POPUP STYLES --- */
+        .cookie-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.75); /* Dark semi-transparent background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .cookie-modal {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .cookie-close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ffffff;
+            border: 2px solid #000;
+            border-radius: 5px;
+            width: 32px;
+            height: 32px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000;
+        }
+
+        .cookie-modal h2 {
+            color: var(--popup-teal);
+            font-family: 'Georgia', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cookie-modal p {
+            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .cookie-modal p a {
+            color: #8a2be2; /* Purple link color */
+            text-decoration: underline;
+        }
+
+        .cookie-accept-btn {
+            background-color: var(--popup-teal);
+            color: #ffffff;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cookie-accept-btn:hover {
+            background-color: #0a3845;
+        }
+
         /* Responsive Design for smaller screens */
         @media (max-width: 992px) {
             .hero-section {
@@ -224,6 +305,15 @@
             }
             .logo {
                 font-size: 1.2rem;
+            }
+            .cookie-modal {
+                padding: 30px 20px;
+            }
+            .cookie-modal h2 {
+                font-size: 1.6rem;
+            }
+            .cookie-modal p {
+                font-size: 1rem;
             }
         }
     </style>
@@ -271,7 +361,7 @@
 
     </div> <!-- End of top-section -->
 
-    <!-- New Content Section Added Here -->
+    <!-- New Content Section -->
     <section class="new-content-section">
         <div class="content-container">
             <p>A lot of us struggle with low energy and fatigue, especially as we get older. So we drink coffee, green tea, energy drinks, or even “mushroom coffee” to give ourselves a boost. Those beverages are all well and good. Some of them even have some health benefits. But they won’t fix your fatigue. They’ll only give you a temporary energy boost.</p>
@@ -281,6 +371,23 @@
             <p>Think about it. Every cell in your body needs energy to function. So doesn’t it make sense that the less energy your cells have, the poorer they function? And doesn’t it make sense that the more poorly your...</p>
         </div>
     </section>
+
+    <!-- --- COOKIE POPUP HTML --- -->
+    <div id="cookiePopup" class="cookie-overlay">
+        <div class="cookie-modal">
+            <button class="cookie-close-btn" onclick="closeCookiePopup()">✕</button>
+            <h2>Cookie Notice</h2>
+            <p>This website uses cookies to personalize content and ads, provide social media features, and analyze our traffic. By clicking Accept, you agree to the use of cookies.<br>For more information, visit our <a href="#">Cookie Policy</a></p>
+            <button class="cookie-accept-btn" onclick="closeCookiePopup()">Accept and Continue</button>
+        </div>
+    </div>
+
+    <!-- JavaScript to close the popup -->
+    <script>
+        function closeCookiePopup() {
+            document.getElementById('cookiePopup').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
