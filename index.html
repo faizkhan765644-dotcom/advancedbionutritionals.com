@@ -24,12 +24,14 @@
             --popup-teal: #0d4a5b; /* Teal color from the popup */
         }
 
-        /* Lock background scrolling */
+        /* Lock background scrolling completely for Mobile and Desktop */
         html, body {
             background-color: #ffffff;
             color: var(--text-dark);
-            overflow: hidden; /* Changed from overflow-x: hidden to lock all scrolling */
-            height: 100%;
+            overflow: hidden !important; 
+            height: 100vh;
+            width: 100vw;
+            overscroll-behavior: none;
         }
 
         /* Top Section Wrapper with Angled Bottom */
@@ -197,6 +199,7 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
+            touch-action: none; /* Prevents touch scrolling on mobile */
         }
 
         .cookie-modal {
