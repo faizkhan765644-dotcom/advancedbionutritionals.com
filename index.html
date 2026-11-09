@@ -20,12 +20,22 @@
             --text-blue: #62a8d8; /* Light Blue accent */
             --btn-red: #c83224;
             --btn-red-hover: #a82418;
+            --text-dark: #333333;
         }
 
         body {
+            background-color: #ffffff; /* Changed to white for the new section */
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Top Section Wrapper with Angled Bottom */
+        .top-section {
             background-color: var(--bg-color);
             color: var(--text-white);
-            overflow-x: hidden;
+            /* Creates the angled cut-off at the bottom */
+            clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+            padding-bottom: 80px; /* Extra space so content doesn't get cut off */
         }
 
         /* Header Navigation */
@@ -138,14 +148,38 @@
             position: relative;
         }
 
-        /* Placeholder for the bottle image */
         .bottle-image {
             width: 100%;
             max-width: 450px;
             height: auto;
             object-fit: contain;
-            /* Adding a drop shadow to make it pop like the screenshot */
             filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.4));
+        }
+
+        /* New Content Section (Below the fold) */
+        .new-content-section {
+            background-color: #ffffff;
+            padding: 80px 20px 100px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .content-container {
+            max-width: 850px;
+            /* Using a Serif font to match the screenshot */
+            font-family: 'Georgia', 'Times New Roman', serif; 
+            font-size: 1.35rem;
+            line-height: 1.6;
+            color: #3a3a3a;
+        }
+
+        .content-container p {
+            margin-bottom: 35px;
+        }
+
+        .content-container .highlight-text {
+            color: var(--text-blue);
+            font-weight: 700;
         }
 
         /* Responsive Design for smaller screens */
@@ -169,7 +203,15 @@
             }
             
             nav ul {
-                display: none; /* Hide nav links on mobile for simplicity */
+                display: none;
+            }
+
+            .top-section {
+                clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+            }
+
+            .content-container {
+                font-size: 1.2rem;
             }
         }
 
@@ -188,42 +230,57 @@
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header>
-        <div class="logo">
-            <span class="logo-icon">🧬</span> 
-            <div>advanced<br>bionutritionals<sup style="font-size:0.6rem;">®</sup></div>
-        </div>
+    <!-- Wrapper for the top blue section with angled bottom -->
+    <div class="top-section">
         
-        <nav>
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Ingredients</a></li>
-                <li><a href="#">Guarantee</a></li>
-                <li><a href="#">FAQ</a></li>
-            </ul>
-        </nav>
+        <!-- Header Section -->
+        <header>
+            <div class="logo">
+                <span class="logo-icon">🧬</span> 
+                <div>advanced<br>bionutritionals<sup style="font-size:0.6rem;">®</sup></div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Ingredients</a></li>
+                    <li><a href="#">Guarantee</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </nav>
 
-        <a href="#" class="btn">Order Now</a>
-    </header>
+            <a href="#" class="btn">Order Now</a>
+        </header>
 
-    <!-- Main Content Section -->
-    <main class="hero-section">
-        
-        <!-- Left Side: Text -->
-        <div class="hero-text">
-            <h1>“This is Like<br>Rocket Fuel for<br>Your<br><span class="highlight">Mitochondria!”</span></h1>
-            <p>Studies show it can boost<br>energy, improve mobility, and<br>help you feel younger than<br>you’ve felt in years!</p>
-            <a href="#" class="btn main-btn">Order Now</a>
+        <!-- Main Hero Section -->
+        <main class="hero-section">
+            
+            <!-- Left Side: Text -->
+            <div class="hero-text">
+                <h1>“This is Like<br>Rocket Fuel for<br>Your<br><span class="highlight">Mitochondria!”</span></h1>
+                <p>Studies show it can boost<br>energy, improve mobility, and<br>help you feel younger than<br>you’ve felt in years!</p>
+                <a href="#" class="btn main-btn">Order Now</a>
+            </div>
+
+            <!-- Right Side: Image -->
+            <div class="hero-image">
+                <img src="https://advancedbionutritionals-advanced-mitochondrial.rapid-pond-1dec.workers.dev/advanced.png" alt="Advanced Mitochondrial Formula Bottle" class="bottle-image">
+            </div>
+
+        </main>
+
+    </div> <!-- End of top-section -->
+
+    <!-- New Content Section Added Here -->
+    <section class="new-content-section">
+        <div class="content-container">
+            <p>A lot of us struggle with low energy and fatigue, especially as we get older. So we drink coffee, green tea, energy drinks, or even “mushroom coffee” to give ourselves a boost. Those beverages are all well and good. Some of them even have some health benefits. But they won’t fix your fatigue. They’ll only give you a temporary energy boost.</p>
+            
+            <p class="highlight-text">That’s because they don’t address the root cause of fatigue: low energy production by the cells of the body.</p>
+            
+            <p>Think about it. Every cell in your body needs energy to function. So doesn’t it make sense that the less energy your cells have, the poorer they function? And doesn’t it make sense that the more poorly your...</p>
         </div>
-
-        <!-- Right Side: Image -->
-        <div class="hero-image">
-            <!-- Image updated as requested -->
-            <img src="https://advancedbionutritionals-advanced-mitochondrial.rapid-pond-1dec.workers.dev/advanced.png" alt="Advanced Mitochondrial Formula Bottle" class="bottle-image">
-        </div>
-
-    </main>
+    </section>
 
 </body>
 </html>
